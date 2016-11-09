@@ -43,7 +43,7 @@ public class uranusOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToUranus = (uranus.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToUranus));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToUranus));
         float angle = Vector3.Angle(cam.transform.forward, vectorToUranus);
 
         if (angle <= 90)

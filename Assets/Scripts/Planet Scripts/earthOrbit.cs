@@ -42,7 +42,7 @@ public class earthOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToEarth = (earth.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToEarth));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToEarth));
         float angle = Vector3.Angle(cam.transform.forward, vectorToEarth);
 
         if (angle <= 90)

@@ -42,7 +42,7 @@ public class jupiterOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToJupiter = (jupiter.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToJupiter));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToJupiter));
         float angle = Vector3.Angle(cam.transform.forward, vectorToJupiter);
 
         if (angle <= 90)

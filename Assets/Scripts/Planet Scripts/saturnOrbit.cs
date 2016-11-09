@@ -42,7 +42,7 @@ public class saturnOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToSaturn = (saturn.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToSaturn));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToSaturn));
         float angle = Vector3.Angle(cam.transform.forward, vectorToSaturn);
 
         if (angle <= 90)

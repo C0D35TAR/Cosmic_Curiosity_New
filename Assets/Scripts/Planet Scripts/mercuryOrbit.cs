@@ -6,8 +6,8 @@ public class mercuryOrbit : MonoBehaviour
 {
     public float orbitSpeed = 10;
 
-    public GameObject mercury;
-    public GameObject mercuryText;
+    private GameObject mercury;
+    private GameObject mercuryText;
     Camera cam;
 
     GameObject mercuryCanvas;
@@ -35,9 +35,17 @@ public class mercuryOrbit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(interaction);
+        Debug.Log(Time.timeScale);
+
         if (interaction == true)
         {
             mercuryCanvas.SetActive(true);
+            if (Input.GetMouseButtonDown(1))
+            {
+                Debug.Log("CodyIsABigNoob");
+                Time.timeScale = 0;
+            }
             allowInput = true;
         }
 
@@ -49,7 +57,7 @@ public class mercuryOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToMercury = (mercury.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToMercury));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToMercury));
         float angle = Vector3.Angle(cam.transform.forward, vectorToMercury);
 
         if (angle <= 90)
@@ -70,10 +78,6 @@ public class mercuryOrbit : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                Debug.Log("CodyIsABigNoob");
-            }
 
             interaction = true;
             txtRef.text = "PRESS 'R' TO LEARN MORE ABOUT MERCURY";

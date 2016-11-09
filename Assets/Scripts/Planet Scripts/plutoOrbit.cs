@@ -42,7 +42,7 @@ public class plutoOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToPluto = (pluto.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToPluto));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToPluto));
         float angle = Vector3.Angle(cam.transform.forward, vectorToPluto);
 
         if (angle <= 90)

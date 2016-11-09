@@ -42,7 +42,7 @@ public class marsOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToMars = (mars.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToMars));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToMars));
         float angle = Vector3.Angle(cam.transform.forward, vectorToMars);
 
         if (angle <= 90)

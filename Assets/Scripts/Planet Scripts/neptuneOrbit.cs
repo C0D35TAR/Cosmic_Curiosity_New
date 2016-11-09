@@ -42,7 +42,7 @@ public class neptuneOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToNeptune = (neptune.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToNeptune));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToNeptune));
         float angle = Vector3.Angle(cam.transform.forward, vectorToNeptune);
 
         if (angle <= 90)

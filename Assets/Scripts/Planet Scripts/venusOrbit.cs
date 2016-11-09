@@ -42,7 +42,7 @@ public class venusOrbit : MonoBehaviour
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);
 
         Vector3 vectorToVenus = (venus.transform.position - cam.transform.position);
-        Debug.Log(Vector3.Angle(cam.transform.forward, vectorToVenus));
+        //Debug.Log(Vector3.Angle(cam.transform.forward, vectorToVenus));
         float angle = Vector3.Angle(cam.transform.forward, vectorToVenus);
 
         if (angle <= 90)
