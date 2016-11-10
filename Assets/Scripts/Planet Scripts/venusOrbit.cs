@@ -14,6 +14,8 @@ public class venusOrbit : MonoBehaviour
     private bool interaction;
     private Text txtRef;
 
+    public bool isInteracting;
+
     // Use this for initialization
     void Start()
     {
@@ -32,11 +34,17 @@ public class venusOrbit : MonoBehaviour
         if (interaction == true)
         {
             venusCanvas.SetActive(true);
+            if (Input.GetKeyDown("r"))
+            {
+                Time.timeScale = 0;
+            }
+            isInteracting = true;
         }
 
         if (interaction == false)
         {
             venusCanvas.SetActive(false);
+            isInteracting = false;
         }
 
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);

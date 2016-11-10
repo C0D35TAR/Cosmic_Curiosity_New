@@ -15,8 +15,7 @@ public class mercuryOrbit : MonoBehaviour
     private Text txtRef;
 
     //Testing
-    public bool allowInput;
-    public GameObject pauseMenu;
+    public bool isInteracting;
 
     // Use this for initialization
     void Start()
@@ -28,8 +27,6 @@ public class mercuryOrbit : MonoBehaviour
         interaction = false;
         mercuryCanvas = GameObject.Find("MercuryCanvas");
         txtRef = GameObject.Find("MercuryPopUp").GetComponent<Text>();
-
-        pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
     }
 
     // Update is called once per frame
@@ -41,17 +38,17 @@ public class mercuryOrbit : MonoBehaviour
         if (interaction == true)
         {
             mercuryCanvas.SetActive(true);
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetKeyDown("r"))
             {
-                Debug.Log("CodyIsABigNoob");
                 Time.timeScale = 0;
             }
-            allowInput = true;
+            isInteracting = true;
         }
 
         if (interaction == false)
         {
             mercuryCanvas.SetActive(false);
+            isInteracting = false;
         }
 
         transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 1, 0), orbitSpeed * Time.deltaTime);

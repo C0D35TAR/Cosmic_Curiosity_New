@@ -14,6 +14,8 @@ public class uranusOrbit : MonoBehaviour
     private bool interaction;
     private Text txtRef;
 
+    public bool isInteracting;
+
     // Use this for initialization
     void Start()
     {
@@ -32,11 +34,17 @@ public class uranusOrbit : MonoBehaviour
         if (interaction == true)
         {
             uranusCanvas.SetActive(true);
+            if (Input.GetKeyDown("r"))
+            {
+                Time.timeScale = 0;
+            }
+            isInteracting = true;
         }
 
         if (interaction == false)
         {
             uranusCanvas.SetActive(false);
+            isInteracting = false;
         }
 
 

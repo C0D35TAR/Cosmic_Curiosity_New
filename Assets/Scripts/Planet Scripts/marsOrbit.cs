@@ -14,6 +14,8 @@ public class marsOrbit : MonoBehaviour
     private bool interaction;
     private Text txtRef;
 
+    public bool isInteracting;
+
     // Use this for initialization
     void Start()
     {
@@ -32,6 +34,11 @@ public class marsOrbit : MonoBehaviour
         if (interaction == true)
         {
             marsCanvas.SetActive(true);
+            if (Input.GetKeyDown("r"))
+            {
+                Time.timeScale = 0;
+            }
+            isInteracting = true;
         }
 
         if (interaction == false)
